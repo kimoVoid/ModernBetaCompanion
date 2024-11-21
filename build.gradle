@@ -1,0 +1,91 @@
+plugins {
+	id 'maven-publish'
+	id 'org.quiltmc.loom' version '1.8-SNAPSHOT'
+	id 'ploceus' version '1.8-SNAPSHOT'
+}
+
+base {
+	archivesName = project.archives_base_name
+}
+version = "${project.version}+${project.minecraft_version}"
+group = project.maven_group
+
+loom {
+	runs {
+        client {
+            vmArgs "-Dsun.java2d.uiScale=1"
+        }
+    }
+	clientOnlyMinecraftJar()
+}
+
+ploceus {
+	clientOnlyMappings()
+}
+
+repositories {
+	maven { url = "https://moehreag.duckdns.org/maven/snapshots" }
+	maven {
+		name = "Jitpack"
+		url = "https://jitpack.io/"
+		content {
+			includeGroup("com.github.GeyserMC")
+		}
+	}
+}
+
+dependencies {
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	mappings ploceus.featherMappings(project.feather_build)
+	exceptions ploceus.raven(project.raven_build)
+	signatures ploceus.sparrow(project.sparrow_build)
+	nests ploceus.nests(project.nests_build)
+
+	modImplementation "org.quiltmc:quilt-loader:${project.loader_version}"
+	modImplementation files("libs/betaqol-client-1.0.1+b1.7.3.jar")
+
+	// Beta QOL deps
+	modImplementation "com.terraformersmc:modmenu:0.2.1+mcb1.7.3"
+	implementation("com.github.GeyserMC:MCAuthLib:d9d773e5d50327c33898c65cd545a4f6ef3ba1b5")
+	implementation('io.github.axolotlclient.AxolotlClient-config:AxolotlClientConfig-common:3.0.0-beta.45')
+	modImplementation('io.github.axolotlclient.extra:AxolotlClient-config:0.0.1-beta.6+b1.7.3')
+
+	ploceus.dependOsl(project.osl_version, 'client')
+}
+
+processResources {
+	inputs.property 'version', version
+
+	filesMatching('quilt.mod.json') {
+		expand 'version': version
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.encoding = 'UTF-8'
+	it.options.release = 8
+}
+
+java {
+	sourceCompatibility = JavaVersion.VERSION_1_8
+	targetCompatibility = JavaVersion.VERSION_1_8
+
+	withSourcesJar()
+}
+
+jar {
+	from('LICENSE') {
+		rename { "${it}_${base.archivesName.get()}" }
+	}
+}
+
+publishing {
+	publications {
+		mavenJava(MavenPublication) {
+			from components.java
+		}
+	}
+
+	repositories {
+	}
+}
