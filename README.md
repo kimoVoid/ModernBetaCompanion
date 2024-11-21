@@ -4,7 +4,7 @@ This mod reads join/leave messages and adds them to Beta QOL's tablist.
 <br>To use this mod, you will need to use OrnitheMC (Fabric and Quilt supported). This also requires the Beta QOL client mod.
 
 ## Links
-<br>🔗 [OrnitheMC installer](https://ornithemc.net)
+🔗 [OrnitheMC installer](https://ornithemc.net)
 <br>🔗 [Beta QOL mod](https://github.com/kimoVoid/BetaQOL/releases/latest)
 <br>🔗 [Modern Beta SMP website](https://modernbeta.org/)
 
