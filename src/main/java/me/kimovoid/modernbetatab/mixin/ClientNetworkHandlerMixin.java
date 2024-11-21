@@ -35,11 +35,13 @@ public class ClientNetworkHandlerMixin {
 		if (packet.message.contains("Currently online: ")) {
 			this.currentPlayers = packet.message.split("Currently online: ")[1];
 			this.readingInitialMessage = true;
+			return;
 		}
 
 		/* Read more initial "current players" messages */
 		if (this.readingInitialMessage) {
 			this.currentPlayers += packet.message;
+			return;
 		}
 
 		/* Join message */
