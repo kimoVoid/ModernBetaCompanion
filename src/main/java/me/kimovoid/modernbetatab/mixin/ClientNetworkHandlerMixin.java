@@ -15,11 +15,13 @@ public class ClientNetworkHandlerMixin {
 
 	@Unique private String currentPlayers = "";
 	@Unique private boolean readingInitialMessage = false;
+	@Unique private boolean doneReadingInitialMessage = false;
 
 	@Inject(method = "tick", at = @At("HEAD"))
 	private void switchReadingMessages(CallbackInfo ci) {
 		if (this.readingInitialMessage) {
 			this.readingInitialMessage = false;
+			this.doneReadingInitialMessage = true;
 			//ModernBetaTab.LOGGER.info("Finished reading player list: {}", this.currentPlayers);
 			for (String player : this.currentPlayers.split(", ")) {
 				BetaQOL.INSTANCE.tabPlayers.put(player, 10);
@@ -43,6 +45,8 @@ public class ClientNetworkHandlerMixin {
 			this.currentPlayers += packet.message;
 			return;
 		}
+
+		if (!this.doneReadingInitialMessage) return;
 
 		/* Join message */
 		if (packet.message.contains("§e joined the game")) {
