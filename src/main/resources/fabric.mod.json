@@ -1,18 +1,19 @@
 {
   "schemaVersion": 1,
-  "id": "modernbetatab",
+  "id": "modernbetacompanion",
   "version": "${version}",
-  "name": "Modern Beta Tab",
-  "description": "Adds support for Beta QOL's tab in the Modern Beta SMP",
+  "name": "Modern Beta Companion",
+  "description": "Seamless experience while playing on the Modern Beta SMP",
   "authors": [
     "kimoVoid"
   ],
   "license": "MIT",
-  "icon": "assets/modernbetatab/icon.png",
+  "icon": "assets/modernbetacompanion/icon.png",
   "environment": "client",
   "mixins": [
-    "modernbetatab.mixins.json"
+    "modernbetacompanion.mixins.json"
   ],
+  "accessWidener": "modernbetacompanion.accesswidener",
   "depends": {
     "betaqol": ">=1.0.0",
     "minecraft": "1.0.0-beta.7.3"

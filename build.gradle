@@ -16,6 +16,7 @@ loom {
             vmArgs "-Dsun.java2d.uiScale=1"
         }
     }
+	accessWidenerPath = file("src/main/resources/modernbetacompanion.accesswidener")
 	clientOnlyMinecraftJar()
 }
 
@@ -56,7 +57,7 @@ dependencies {
 processResources {
 	inputs.property 'version', version
 
-	filesMatching('quilt.mod.json') {
+	filesMatching('fabric.mod.json') {
 		expand 'version': version
 	}
 }

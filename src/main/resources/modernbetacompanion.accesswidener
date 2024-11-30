@@ -1,0 +1,4 @@
+accessWidener v2 named
+accessible field net/minecraft/client/Minecraft INSTANCE Lnet/minecraft/client/Minecraft;
+accessible field net/minecraft/client/network/handler/ClientNetworkHandler connection Lnet/minecraft/network/Connection;
+accessible field net/minecraft/network/Connection socket Ljava/net/Socket;
