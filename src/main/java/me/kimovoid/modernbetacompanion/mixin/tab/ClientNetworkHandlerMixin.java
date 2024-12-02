@@ -53,7 +53,7 @@ public class ClientNetworkHandlerMixin {
 			return;
 		}
 
-		if (!this.doneReadingInitialMessage || !message.startsWith("§e")) return;
+		if (!this.doneReadingInitialMessage || !packet.message.startsWith("§e")) return;
 
 		/* Join message */
 		if (message.contains(" joined the game")) {
