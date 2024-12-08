@@ -57,7 +57,7 @@ public class ClientNetworkHandlerMixin {
 
 		/* Join message */
 		if (message.contains(" joined the game")) {
-			String name = message.contains(" (formerly") ? message.split(" (formerly")[0] : message.split(" joined")[0];
+			String name = message.contains(" (formerly") ? message.split(" \\(formerly")[0] : message.split(" joined")[0];
 			BetaQOL.INSTANCE.tabPlayers.put(name, 1);
 		}
 
