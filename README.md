@@ -1,4 +1,4 @@
-![icon.png](src%2Fmain%2Fresources%2Fassets%2Fmodernbetatab%2Ficon.png)
+![icon.png](src%2Fmain%2Fresources%2Fassets%2Fmodernbetacompanion%2Ficon.png)
 # Modern Beta Companion (b1.7.3)
 This mod makes it seamless to play on the Modern Beta SMP from a b1.7.3 client.
 <br>To use this mod, you will need to use OrnitheMC (Fabric and Quilt supported). This also requires the Beta QOL client mod.
@@ -31,12 +31,10 @@ This mod makes it seamless to play on the Modern Beta SMP from a b1.7.3 client.
   - Rails
   - Dispensers
   - Spawners
-- Some blocks can now be placed anywhere
-  - Fences
-  - Slabs
+- Fences can now be placed anywhere
 
 ## Known limitations
-Since the mod can only read player names, ping won't be correct. This also makes it impossible to show ranks in the player list.ç
+Since the mod can only read player names, ping won't be correct. This also makes it impossible to show ranks in the player list.
 
 ## Credits
 The block fixes were inspired by [AnnoyanceFix](https://modrinth.com/mod/annoyancefix-stationapi-edition) for Babric.
