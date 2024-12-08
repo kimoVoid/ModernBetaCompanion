@@ -37,6 +37,7 @@ public class ToolItemMixin {
                     Block.JUKEBOX,
                     Block.OAK_STAIRS,
                     Block.FENCE,
+                    Block.LADDER,
                     Block.PUMPKIN,
                     Block.LIT_PUMPKIN,
                     Block.TRAPDOOR
