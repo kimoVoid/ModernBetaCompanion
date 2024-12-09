@@ -1,11 +1,13 @@
 ![icon.png](src%2Fmain%2Fresources%2Fassets%2Fmodernbetacompanion%2Ficon.png)
 # Modern Beta Companion (b1.7.3)
 This mod makes it seamless to play on the Modern Beta SMP from a b1.7.3 client.
-<br>To use this mod, you will need to use OrnitheMC (Fabric and Quilt supported). This also requires the Beta QOL client mod.
+<br>To use this mod, you will need to use OrnitheMC (Fabric and Quilt supported).
+
+> [!IMPORTANT]
+> This mod requires the <b>[Beta QOL mod](https://github.com/kimoVoid/BetaQOL/releases/latest)</b> mod to work.
 
 ## Links
 🔗 [OrnitheMC installer](https://ornithemc.net)
-<br>🔗 [Beta QOL mod](https://github.com/kimoVoid/BetaQOL/releases/latest)
 <br>🔗 [Modern Beta SMP website](https://modernbeta.org/)
 
 ## Current features
