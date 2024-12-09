@@ -7,6 +7,11 @@
   "authors": [
     "kimoVoid"
   ],
+  "contact": {
+    "homepage": "https://github.com/kimoVoid/ModernBetaCompanion",
+    "sources": "https://github.com/kimoVoid/ModernBetaCompanion",
+    "issues": "https://github.com/kimoVoid/ModernBetaCompanion/issues"
+  },
   "license": "MIT",
   "icon": "assets/modernbetacompanion/icon.png",
   "environment": "client",
