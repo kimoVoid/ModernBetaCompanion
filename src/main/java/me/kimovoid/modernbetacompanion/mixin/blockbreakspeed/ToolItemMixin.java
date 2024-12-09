@@ -60,7 +60,9 @@ public class ToolItemMixin {
                     Block.LIT_REDSTONE_ORE,
                     Block.STONE_BUTTON,
                     Block.BRICKS,
-                    Block.MOB_SPAWNER
+                    Block.MOB_SPAWNER,
+                    Block.PISTON,
+                    Block.STICKY_PISTON
             }, Block.class);
         }
 
