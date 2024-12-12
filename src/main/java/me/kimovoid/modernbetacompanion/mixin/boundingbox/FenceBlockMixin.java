@@ -16,6 +16,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(FenceBlock.class)
 public abstract class FenceBlockMixin extends Block {
 
+    @Unique private World world;
+
     protected FenceBlockMixin(int id, Material material) {
         super(id, material);
     }
@@ -50,22 +52,10 @@ public abstract class FenceBlockMixin extends Block {
     }
 
     @Inject(method = "getCollisionShape", at = @At("RETURN"), cancellable = true)
-    public void modifyCollisionShape(World level, int x, int y, int z, CallbackInfoReturnable<Box> cir) {
-        if (ModernBetaCompanion.isPlayingModernBeta()) {
-            cir.setReturnValue(this.modernFenceBox(level, x, y, z, true));
-        }
-    }
-
-    @Unique private World world;
-
-    @Override
-    public Box getCollisionShape(World world, int x, int y, int z) {
+    public void modifyCollisionShape(World world, int x, int y, int z, CallbackInfoReturnable<Box> cir) {
         if (ModernBetaCompanion.isPlayingModernBeta()) {
             this.world = world;
-            return this.modernFenceBox(world, x, y, z, false);
-        }
-        else {
-            return super.getCollisionShape(world, x, y, z);
+            cir.setReturnValue(this.modernFenceBox(world, x, y, z, true));
         }
     }
 
