@@ -24,9 +24,9 @@ public class ClientNetworkHandlerMixin {
 	private void switchReadingMessages(CallbackInfo ci) {
 		if (this.readingTicks > 0 && !this.doneReadingInitialMessage) {
 			this.readingTicks++;
-			if (this.readingTicks < 3) return;
+			if (this.readingTicks < 5) return;
+
 			this.doneReadingInitialMessage = true;
-			//ModernBetaTab.LOGGER.info("Finished reading player list: {}", this.currentPlayers);
 			for (String player : this.currentPlayers.split(", ")) {
 				BetaQOL.INSTANCE.tabPlayers.put(player, 1);
 			}
@@ -48,7 +48,7 @@ public class ClientNetworkHandlerMixin {
 		}
 
 		/* Read more initial "current players" messages */
-		if (this.readingTicks <= 3 && !this.doneReadingInitialMessage) {
+		if (this.readingTicks > 0 && this.readingTicks <= 5 && !this.doneReadingInitialMessage) {
 			this.currentPlayers += message;
 			return;
 		}
