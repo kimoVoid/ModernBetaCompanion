@@ -43,7 +43,7 @@ dependencies {
 	nests ploceus.nests(project.nests_build)
 
 	modImplementation "org.quiltmc:quilt-loader:${project.loader_version}"
-	modImplementation files("libs/betaqol-client-1.0.1+b1.7.3.jar")
+	modImplementation files("libs/betaqol-client-1.0.3+b1.7.3.jar")
 
 	// Beta QOL deps
 	modImplementation "com.terraformersmc:modmenu:0.2.1+mcb1.7.3"
