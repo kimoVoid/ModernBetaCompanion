@@ -15,12 +15,17 @@
   "license": "MIT",
   "icon": "assets/modernbetacompanion/icon.png",
   "environment": "client",
+  "entrypoints": {
+    "client-init": [
+      "me.kimovoid.modernbetacompanion.ModernBetaCompanion"
+    ]
+  },
   "mixins": [
     "modernbetacompanion.mixins.json"
   ],
   "accessWidener": "modernbetacompanion.accesswidener",
   "depends": {
-    "betaqol": ">=1.0.0",
+    "betaqol": ">=1.0.5",
     "minecraft": "1.0.0-beta.7.3"
   }
 }

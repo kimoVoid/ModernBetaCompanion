@@ -26,13 +26,6 @@ ploceus {
 
 repositories {
 	maven { url = "https://moehreag.duckdns.org/maven/snapshots" }
-	maven {
-		name = "Jitpack"
-		url = "https://jitpack.io/"
-		content {
-			includeGroup("com.github.GeyserMC")
-		}
-	}
 }
 
 dependencies {
@@ -43,11 +36,11 @@ dependencies {
 	nests ploceus.nests(project.nests_build)
 
 	modImplementation "org.quiltmc:quilt-loader:${project.loader_version}"
-	modImplementation files("libs/betaqol-client-1.0.3+b1.7.3.jar")
+	modImplementation files("libs/betaqol-client-1.0.5+b1.7.3.jar")
 
 	// Beta QOL deps
 	modImplementation "com.terraformersmc:modmenu:0.2.1+mcb1.7.3"
-	implementation("com.github.GeyserMC:MCAuthLib:d9d773e5d50327c33898c65cd545a4f6ef3ba1b5")
+	implementation include('net.lenni0451.commons:httpclient:1.6.1')
 	implementation('io.github.axolotlclient.AxolotlClient-config:AxolotlClientConfig-common:3.0.0-beta.45')
 	modImplementation('io.github.axolotlclient.extra:AxolotlClient-config:0.0.1-beta.6+b1.7.3')
 
