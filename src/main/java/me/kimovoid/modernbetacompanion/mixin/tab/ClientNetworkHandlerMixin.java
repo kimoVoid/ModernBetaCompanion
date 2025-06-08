@@ -43,7 +43,7 @@ public class ClientNetworkHandlerMixin {
 		/* Initial join message with all current players */
 		if (message.contains("Currently online: ")) {
 			this.currentPlayers = message.split("Currently online: ")[1];
-			this.readingTicks++;
+			this.readingTicks = 1;
 			return;
 		}
 
