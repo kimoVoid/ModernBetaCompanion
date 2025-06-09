@@ -10,16 +10,22 @@ import java.net.URL;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Future;
 
-@SuppressWarnings("unchecked")
 public class CapeProvider {
 
     public Future<String> getCape(String username) {
         try {
             HttpClient httpClient = new HttpClient(ExecutorType.AUTO);
-            UUIDResponse uuidresponse = this.getRequest(httpClient, "https://api.mojang.com/users/profiles/minecraft/" + username);
+            String uuid;
 
-            /* The API requires UUIDs with dashes */
-            String uuid = uuidresponse.id.replaceFirst("(\\p{XDigit}{8})(\\p{XDigit}{4})(\\p{XDigit}{4})(\\p{XDigit}{4})(\\p{XDigit}+)", "$1-$2-$3-$4-$5");
+            /* Bedrock support */
+            if (username.startsWith(".")) {
+                FUIDResponse fuidResponse = this.getRequest(httpClient, "https://mcprofile.io/api/v1/bedrock/gamertag/" + username.substring(1), FUIDResponse.class);
+                uuid = fuidResponse.floodgateuid;
+            } else {
+                UUIDResponse uuidResponse = this.getRequest(httpClient, "https://api.mojang.com/users/profiles/minecraft/" + username, UUIDResponse.class);
+                uuid = uuidResponse.id.replaceFirst("(\\p{XDigit}{8})(\\p{XDigit}{4})(\\p{XDigit}{4})(\\p{XDigit}{4})(\\p{XDigit}+)", "$1-$2-$3-$4-$5");
+            }
+
             String s = "https://cape.modernbeta.org/cape/" + uuid;
 
             /* Check if the URL returns an image */
@@ -34,12 +40,15 @@ public class CapeProvider {
         }
     }
 
-    private <T> T getRequest(HttpClient httpClient, String URL) throws IOException {
-        return new Gson().fromJson(httpClient.get(URL).execute().getContentAsString(), (Class<T>) UUIDResponse.class);
+    private <T> T getRequest(HttpClient httpClient, String URL, Class<T> classOfT) throws IOException {
+        return new Gson().fromJson(httpClient.get(URL).execute().getContentAsString(), classOfT);
     }
 
     private static class UUIDResponse {
         private String id;
-        private String name;
+    }
+
+    private static class FUIDResponse {
+        private String floodgateuid;
     }
 }
