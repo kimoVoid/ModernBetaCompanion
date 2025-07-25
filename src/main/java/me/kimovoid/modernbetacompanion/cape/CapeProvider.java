@@ -1,8 +1,11 @@
 package me.kimovoid.modernbetacompanion.cape;
 
 import com.google.gson.Gson;
-import net.lenni0451.commons.httpclient.HttpClient;
-import net.lenni0451.commons.httpclient.executor.ExecutorType;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
 
 import javax.imageio.ImageIO;
 import java.io.IOException;
@@ -14,7 +17,7 @@ public class CapeProvider {
 
     public Future<String> getCape(String username) {
         try {
-            HttpClient httpClient = new HttpClient(ExecutorType.AUTO);
+            CloseableHttpClient httpClient = HttpClients.createDefault();
             String uuid;
 
             /* Bedrock support */
@@ -41,7 +44,8 @@ public class CapeProvider {
     }
 
     private <T> T getRequest(HttpClient httpClient, String URL, Class<T> classOfT) throws IOException {
-        return new Gson().fromJson(httpClient.get(URL).execute().getContentAsString(), classOfT);
+        String response = EntityUtils.toString(httpClient.execute(new HttpGet(URL)).getEntity());
+        return new Gson().fromJson(response, classOfT);
     }
 
     private static class UUIDResponse {
