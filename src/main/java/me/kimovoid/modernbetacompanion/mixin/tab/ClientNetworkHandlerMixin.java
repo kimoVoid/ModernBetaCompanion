@@ -38,7 +38,7 @@ public class ClientNetworkHandlerMixin {
 		if (!ModernBetaCompanion.isPlayingModernBeta()) return;
 
 		String message = STRIP_COLOR_PATTERN.matcher(packet.message).replaceAll("");
-		if (message.startsWith("[")) return; // In some rare cases, the mod would read chat messages. This avoids it.
+		if (message.startsWith("[") || message.startsWith("§")) return; // In some rare cases, the mod would read chat messages. This avoids it.
 
 		/* Initial join message with all current players */
 		if (message.contains("Currently online: ")) {
