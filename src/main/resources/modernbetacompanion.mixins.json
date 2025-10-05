@@ -10,7 +10,6 @@
     "blockbreakspeed.ToolItemMixin",
     "blockplacement.FenceBlockMixin",
     "boundingbox.FenceBlockMixin",
-    "cape.ClientNetworkHandlerMixin",
-    "tab.ClientNetworkHandlerMixin"
+    "cape.ClientNetworkHandlerMixin"
   ]
 }

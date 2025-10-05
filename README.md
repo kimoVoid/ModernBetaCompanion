@@ -11,10 +11,7 @@ This mod makes it seamless to play on the Modern Beta SMP from a b1.7.3 client.
 <br>🔗 [Modern Beta SMP website](https://modernbeta.org/)
 
 ## Current features
-- Player list (tab) support
-  - Uses Beta QOL's tab implementation
-  - Reads the initial "current players" message
-  - Also reads join/quit messages to update it
+- ~~Player list (tab) support~~ Discontinued since the Folia update 💔
 - Adjusted the breaking speed of some blocks:
   - Redstone ores
   - Stairs
@@ -34,9 +31,8 @@ This mod makes it seamless to play on the Modern Beta SMP from a b1.7.3 client.
   - Dispensers
   - Spawners
 - Fences can now be placed anywhere
-
-## Known limitations
-Since the mod can only read player names, ping won't be correct. This also makes it impossible to show ranks in the player list.
+- Modern Beta capes are now displayed as real capes
+  - If you change or disable your cape, you need to relog to see it
 
 ## Credits
 The block fixes were inspired by [AnnoyanceFix](https://modrinth.com/mod/annoyancefix-stationapi-edition) for Babric.
