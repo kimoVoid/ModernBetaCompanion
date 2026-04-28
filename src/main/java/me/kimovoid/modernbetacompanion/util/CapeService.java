@@ -1,4 +1,4 @@
-package me.kimovoid.modernbetacompanion.cape;
+package me.kimovoid.modernbetacompanion.util;
 
 import me.kimovoid.betaqol.event.BetaQOLEvents;
 import net.minecraft.client.Minecraft;

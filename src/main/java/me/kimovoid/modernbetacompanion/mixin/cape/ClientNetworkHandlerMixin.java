@@ -1,7 +1,7 @@
 package me.kimovoid.modernbetacompanion.mixin.cape;
 
 import me.kimovoid.modernbetacompanion.ModernBetaCompanion;
-import me.kimovoid.modernbetacompanion.cape.CapeService;
+import me.kimovoid.modernbetacompanion.util.CapeService;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.network.handler.ClientNetworkHandler;
 import org.spongepowered.asm.mixin.Mixin;

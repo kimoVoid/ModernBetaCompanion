@@ -1,7 +1,7 @@
 package me.kimovoid.modernbetacompanion;
 
 import me.kimovoid.betaqol.event.BetaQOLEvents;
-import me.kimovoid.modernbetacompanion.cape.CapeService;
+import me.kimovoid.modernbetacompanion.util.CapeService;
 import net.minecraft.client.Minecraft;
 import net.ornithemc.osl.entrypoints.api.client.ClientModInitializer;
 

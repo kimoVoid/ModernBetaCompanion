@@ -1,4 +1,4 @@
-package me.kimovoid.modernbetacompanion.cape;
+package me.kimovoid.modernbetacompanion.util;
 
 import com.google.gson.Gson;
 import org.apache.http.client.HttpClient;

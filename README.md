@@ -1,6 +1,6 @@
 ![icon.png](src%2Fmain%2Fresources%2Fassets%2Fmodernbetacompanion%2Ficon.png)
 # Modern Beta Companion (b1.7.3)
-This mod makes it seamless to play on the Modern Beta SMP from a b1.7.3 client.
+This mod adds a few quality of life enhancements while playing on the Modern Beta SMP on a b1.7.3 client.
 <br>To use this mod, you will need to use OrnitheMC (Fabric and Quilt supported).
 
 > [!IMPORTANT]
@@ -11,7 +11,7 @@ This mod makes it seamless to play on the Modern Beta SMP from a b1.7.3 client.
 <br>🔗 [Modern Beta SMP website](https://modernbeta.org/)
 
 ## Current features
-- ~~Player list (tab) support~~ Discontinued since the Folia update 💔
+- Player list (tab) support
 - Adjusted the breaking speed of some blocks:
   - Redstone ores
   - Stairs
